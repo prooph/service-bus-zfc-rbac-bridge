@@ -2,8 +2,6 @@
 
 namespace Prooph\ServiceBusZfcRbacBridge\Container;
 
-use Interop\Config\ConfigurationTrait;
-use Interop\Config\HasConfig;
 use Interop\Container\ContainerInterface;
 use Prooph\ServiceBusZfcRbacBridge\FinalizeGuard;
 
@@ -11,10 +9,8 @@ use Prooph\ServiceBusZfcRbacBridge\FinalizeGuard;
  * Class FinalizeGuardFactory
  * @package Prooph\ServiceBusZfcRbacBridge\Container
  */
-final class FinalizeGuardFactory implements HasConfig
+final class FinalizeGuardFactory
 {
-    use ConfigurationTrait;
-
     /**
      * @param ContainerInterface $container
      * @return FinalizeGuard
@@ -24,10 +20,7 @@ final class FinalizeGuardFactory implements HasConfig
         /* @var \ZfcRbac\Service\AuthorizationService $authorizationService */
         $authorizationService = $container->get('ZfcRbac\Service\AuthorizationService');
 
-        $guard = new FinalizeGuard($authorizationService);
-        $guard->setProtectionPolicy($this->options($container->get('Config')));
-
-        return $guard;
+        return new FinalizeGuard($authorizationService);
     }
 
     /**

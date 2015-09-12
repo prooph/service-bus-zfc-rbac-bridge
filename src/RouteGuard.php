@@ -4,15 +4,33 @@ namespace Prooph\ServiceBusZfcRbacBridge;
 
 use Prooph\Common\Event\ActionEvent;
 use Prooph\Common\Event\ActionEventEmitter;
+use Prooph\Common\Event\ActionEventListenerAggregate;
+use Prooph\Common\Event\DetachAggregateHandlers;
 use Prooph\ServiceBus\MessageBus;
 use ZfcRbac\Exception\UnauthorizedException;
+use ZfcRbac\Service\AuthorizationServiceInterface;
 
 /**
  * Class RouteGuard
  * @package Prooph\ServiceBusZfcRbacBridge
  */
-final class RouteGuard extends AbstractGuard
+final class RouteGuard implements ActionEventListenerAggregate
 {
+    use DetachAggregateHandlers;
+
+    /**
+     * @var AuthorizationServiceInterface
+     */
+    private $authorizationService;
+
+    /**
+     * @param AuthorizationServiceInterface $authorizationService
+     */
+    public function __construct(AuthorizationServiceInterface $authorizationService)
+    {
+        $this->authorizationService = $authorizationService;
+    }
+
     /**
      * @param ActionEvent $actionEvent
      */

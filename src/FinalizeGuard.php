@@ -4,6 +4,8 @@ namespace Prooph\ServiceBusZfcRbacBridge;
 
 use Prooph\Common\Event\ActionEvent;
 use Prooph\Common\Event\ActionEventEmitter;
+use Prooph\Common\Event\ActionEventListenerAggregate;
+use Prooph\Common\Event\DetachAggregateHandlers;
 use Prooph\ServiceBus\MessageBus;
 use React\Promise\Deferred;
 use ZfcRbac\Exception\UnauthorizedException;
@@ -13,9 +15,24 @@ use ZfcRbac\Service\AuthorizationServiceInterface;
  * Class FinalizeGuard
  * @package Prooph\ServiceBusZfcRbacBridge
  */
-final class FinalizeGuard extends AbstractGuard
+final class FinalizeGuard implements ActionEventListenerAggregate
 {
+    use DetachAggregateHandlers;
+
     const EVENT_PARAM_DEFERRED = 'query-deferred';
+
+    /**
+     * @var AuthorizationServiceInterface
+     */
+    private $authorizationService;
+
+    /**
+     * @param AuthorizationServiceInterface $authorizationService
+     */
+    public function __construct(AuthorizationServiceInterface $authorizationService)
+    {
+        $this->authorizationService = $authorizationService;
+    }
 
     /**
      * @param ActionEvent $actionEvent

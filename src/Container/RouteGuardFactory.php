@@ -2,8 +2,6 @@
 
 namespace Prooph\ServiceBusZfcRbacBridge\Container;
 
-use Interop\Config\ConfigurationTrait;
-use Interop\Config\HasConfig;
 use Interop\Container\ContainerInterface;
 use Prooph\ServiceBusZfcRbacBridge\RouteGuard;
 
@@ -11,10 +9,8 @@ use Prooph\ServiceBusZfcRbacBridge\RouteGuard;
  * Class RouteGuardFactory
  * @package Prooph\ServiceBusZfcRbacBridge\Container
  */
-final class RouteGuardFactory implements HasConfig
+final class RouteGuardFactory
 {
-    use ConfigurationTrait;
-
     /**
      * @param ContainerInterface $container
      * @return RouteGuard
@@ -24,10 +20,7 @@ final class RouteGuardFactory implements HasConfig
         /* @var \ZfcRbac\Service\AuthorizationService $authorizationService */
         $authorizationService = $container->get('ZfcRbac\Service\AuthorizationService');
 
-        $guard = new RouteGuard($authorizationService);
-        $guard->setProtectionPolicy($this->options($container->get('Config')));
-
-        return $guard;
+        return new RouteGuard($authorizationService);
     }
 
     /**
