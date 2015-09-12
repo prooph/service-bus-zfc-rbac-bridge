@@ -17,12 +17,6 @@ abstract class AbstractGuard implements ActionEventListenerAggregate
     use ProtectionPolicyTrait;
 
     /**
-     * Protection policy constants
-     */
-    const POLICY_DENY  = 'deny';
-    const POLICY_ALLOW = 'allow';
-
-    /**
      * @var AuthorizationServiceInterface
      */
     protected $authorizationService;
