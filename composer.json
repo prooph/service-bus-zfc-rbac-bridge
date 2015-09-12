@@ -1,6 +1,6 @@
 {
     "name": "prooph/service-bus-zfc-rbac-bridge",
-    "description": "",
+    "description": "Marry Service Bus with ZfcRbac",
     "homepage": "https://github.com/prooph/service-bus-zfc-rbac-bridge",
     "license": "BSD-3-Clause",
     "authors": [
@@ -17,13 +17,17 @@
     "keywords": [
         "prooph",
         "CQRS",
-        "messaging"
+        "messaging",
+        "rbac"
     ],
     "require": {
-        "php": ">=5.5"
+        "php": ">=5.5",
+        "sandrokeil/interop-config": "^0.1"
     },
     "require-dev": {
-        "prooph/service-bus": "dev-master",
+        "prooph/service-bus": "^4.2",
+        "zf-commons/zfc-rbac": "^2.5.2",
+        "zfr/rbac": "^1.2",
         "phpunit/phpunit": "~4.7",
         "fabpot/php-cs-fixer": "1.7.*",
         "satooshi/php-coveralls": "dev-master"

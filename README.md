@@ -1,8 +1,13 @@
 # service-bus-zfc-rbac-bridge
 
+Marry Service Bus with ZfcRbac
+
 [![Build Status](https://travis-ci.org/prooph/service-bus-zfc-rbac-bridge.svg)](https://travis-ci.org/prooph/service-bus-zfc-rbac-bridge)
 [![Coverage Status](https://coveralls.io/repos/prooph/service-bus-zfc-rbac-bridge/badge.svg?branch=master&service=github)](https://coveralls.io/github/prooph/service-bus-zfc-rbac-bridge?branch=master)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/prooph/improoph)
+
+# Features
+
 
 
 # Support
