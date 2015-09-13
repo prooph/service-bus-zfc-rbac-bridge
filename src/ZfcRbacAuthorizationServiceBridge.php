@@ -15,10 +15,10 @@ use Prooph\ServiceBus\Plugin\Guard\AuthorizationService as AuthorizationServiceI
 use ZfcRbac\Service\AuthorizationServiceInterface as ZfcRbacAuthorizationServiceInterface;
 
 /**
- * Class AuthorizationService
+ * Class ZfcRbacAuthorizationServiceBridge
  * @package Prooph\ServiceBusZfcRbacBridge
  */
-final class AuthorizationService implements AuthorizationServiceInterface
+final class ZfcRbacAuthorizationServiceBridge implements AuthorizationServiceInterface
 {
     /**
      * @var ZfcRbacAuthorizationServiceInterface

@@ -12,7 +12,7 @@
 namespace Prooph\ServiceBusZfcRbacBridge\Container;
 
 use Interop\Container\ContainerInterface;
-use Prooph\ServiceBusZfcRbacBridge\AuthorizationService;
+use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
 
 /**
  * Class AuthorizationServiceFactory
@@ -22,12 +22,12 @@ final class AuthorizationServiceFactory
 {
     /**
      * @param ContainerInterface $container
-     * @return AuthorizationService
+     * @return ZfcRbacAuthorizationServiceBridge
      */
     public function __invoke(ContainerInterface $container)
     {
         $zfcRbacAuthorizationService = $container->get('ZfcRbac\Service\AuthorizationService');
 
-        return new AuthorizationService($zfcRbacAuthorizationService);
+        return new ZfcRbacAuthorizationServiceBridge($zfcRbacAuthorizationService);
     }
 }

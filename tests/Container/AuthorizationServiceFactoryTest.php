@@ -13,7 +13,7 @@ namespace Prooph\ServiceBusZfcRbacBridge\Container;
 
 use Interop\Container\ContainerInterface;
 use PHPUnit_Framework_TestCase as TestCase;
-use Prooph\ServiceBusZfcRbacBridge\AuthorizationService;
+use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
 use ZfcRbac\Service\AuthorizationServiceInterface as ZfcRbacAuthorizationService;
 
 /**
@@ -36,6 +36,6 @@ final class AuthorizationServiceFactoryTest extends TestCase
 
         $authorizationService = $factory($container->reveal());
 
-        $this->assertInstanceOf(AuthorizationService::class, $authorizationService);
+        $this->assertInstanceOf(ZfcRbacAuthorizationServiceBridge::class, $authorizationService);
     }
 }

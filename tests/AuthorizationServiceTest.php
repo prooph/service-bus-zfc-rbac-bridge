@@ -12,7 +12,7 @@
 namespace Prooph\ServiceBusZfcRbacBridgeTest;
 
 use PHPUnit_Framework_TestCase as TestCase;
-use Prooph\ServiceBusZfcRbacBridge\AuthorizationService;
+use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
 use ZfcRbac\Service\AuthorizationServiceInterface;
 
 /**
@@ -29,7 +29,7 @@ final class AuthorizationServiceTest extends TestCase
         $zfcRbacAuthorizationService = $this->prophesize(AuthorizationServiceInterface::class);
         $zfcRbacAuthorizationService->isGranted('foo', 'bar')->willReturn(true);
 
-        $authorizationService = new AuthorizationService($zfcRbacAuthorizationService->reveal());
+        $authorizationService = new ZfcRbacAuthorizationServiceBridge($zfcRbacAuthorizationService->reveal());
 
         $this->assertTrue($authorizationService->isGranted('foo', 'bar'));
     }
