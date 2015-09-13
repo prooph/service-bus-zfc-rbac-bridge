@@ -30,5 +30,15 @@
         "phpunit/phpunit": "~4.8",
         "fabpot/php-cs-fixer": "1.7.*",
         "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prooph\\ServiceBusZfcRbacBridge\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Prooph\\ServiceBusZfcRbacBridgeTest\\": "tests/"
+        }
     }
 }
