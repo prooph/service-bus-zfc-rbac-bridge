@@ -32,7 +32,7 @@ final class AuthorizationServiceFactoryTest extends TestCase
         $container = $this->prophesize(ContainerInterface::class);
         $container->get('ZfcRbac\Service\AuthorizationService')->willReturn($zfcRbacAuthorizationService->reveal());
 
-        $factory = new AuthorizationServiceFactory();
+        $factory = new ZfcRbacAuthorizationServiceBridgeFactory();
 
         $authorizationService = $factory($container->reveal());
 

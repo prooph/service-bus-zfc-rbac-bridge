@@ -15,10 +15,10 @@ use Interop\Container\ContainerInterface;
 use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
 
 /**
- * Class AuthorizationServiceFactory
+ * Class ZfcRbacAuthorizationServiceBridgeFactory
  * @package Prooph\ServiceBusZfcRbacBridge\Container
  */
-final class AuthorizationServiceFactory
+final class ZfcRbacAuthorizationServiceBridgeFactory
 {
     /**
      * @param ContainerInterface $container
