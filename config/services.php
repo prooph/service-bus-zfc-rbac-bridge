@@ -13,6 +13,6 @@ namespace Prooph\ServiceBusZfcRbacBridge;
 
 return [
     'factories' => [
-        '\Prooph\ServiceBus\Plugin\Guard\AuthorizationService' => Container\AuthorizationServiceFactory::class
+        '\Prooph\ServiceBus\Plugin\Guard\AuthorizationService' => Container\ZfcRbacAuthorizationServiceBridgeFactory::class
     ]
 ];

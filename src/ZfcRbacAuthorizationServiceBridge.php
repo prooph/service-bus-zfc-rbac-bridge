@@ -11,24 +11,24 @@
 
 namespace Prooph\ServiceBusZfcRbacBridge;
 
-use Prooph\ServiceBus\Plugin\Guard\AuthorizationService as AuthorizationServiceInterface;
-use ZfcRbac\Service\AuthorizationServiceInterface as ZfcRbacAuthorizationServiceInterface;
+use Prooph\ServiceBus\Plugin\Guard\AuthorizationService;
+use ZfcRbac\Service\AuthorizationServiceInterface as ZfcRbacAuthorizationService;
 
 /**
  * Class ZfcRbacAuthorizationServiceBridge
  * @package Prooph\ServiceBusZfcRbacBridge
  */
-final class ZfcRbacAuthorizationServiceBridge implements AuthorizationServiceInterface
+final class ZfcRbacAuthorizationServiceBridge implements AuthorizationService
 {
     /**
-     * @var ZfcRbacAuthorizationServiceInterface
+     * @var ZfcRbacAuthorizationService
      */
     private $zfcRbacAuthorizationService;
 
     /**
-     * @param ZfcRbacAuthorizationServiceInterface $zfcRbacAuthorizationService
+     * @param ZfcRbacAuthorizationService $zfcRbacAuthorizationService
      */
-    public function __construct(ZfcRbacAuthorizationServiceInterface $zfcRbacAuthorizationService)
+    public function __construct(ZfcRbacAuthorizationService $zfcRbacAuthorizationService)
     {
         $this->zfcRbacAuthorizationService = $zfcRbacAuthorizationService;
     }
