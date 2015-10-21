@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the prooph/service-bus.
+ * This file is part of the prooph/service-bus-zfc-rbac-bridge.
  * (c) 2014-2015 prooph software GmbH <contact@prooph.de>
  *
  * For the full copyright and license information, please view the LICENSE

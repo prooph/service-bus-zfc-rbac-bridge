@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the prooph/service-bus.
+ * This file is part of the prooph/service-bus-zfc-rbac-bridge.
  * (c) 2014-2015 prooph software GmbH <contact@prooph.de>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -9,16 +9,17 @@
  * Date: 09/13/15 - 20:14
  */
 
-namespace Prooph\ServiceBusZfcRbacBridge\Container;
+namespace ProophTest\ServiceBusZfcRbacBridge\Container;
 
 use Interop\Container\ContainerInterface;
 use PHPUnit_Framework_TestCase as TestCase;
+use Prooph\ServiceBusZfcRbacBridge\Container\ZfcRbacAuthorizationServiceBridgeFactory;
 use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
 use ZfcRbac\Service\AuthorizationServiceInterface as ZfcRbacAuthorizationService;
 
 /**
  * Class AuthorizationServiceFactoryTest
- * @package Prooph\ServiceBusZfcRbacBridge\Container
+ * @package ProophTest\ServiceBusZfcRbacBridge\Container
  */
 final class AuthorizationServiceFactoryTest extends TestCase
 {
