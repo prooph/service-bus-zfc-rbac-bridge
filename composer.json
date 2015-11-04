@@ -1,7 +1,7 @@
 {
     "name": "prooph/service-bus-zfc-rbac-bridge",
     "description": "Marry Service Bus with ZfcRbac",
-    "homepage": "https://github.com/prooph/service-bus-zfc-rbac-bridge",
+    "homepage": "http://getprooph.org/",
     "license": "BSD-3-Clause",
     "authors": [
         {
