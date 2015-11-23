@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": "~5.5|~7.0",
-        "prooph/service-bus": "^4.3",
+        "prooph/service-bus": ">=4.3 <6.0",
         "zf-commons/zfc-rbac": "^2.5.2",
         "zfr/rbac": "^1.2"
     },
