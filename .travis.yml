@@ -7,8 +7,8 @@ php:
 
 env:
   matrix:
-    - REQUIRE_VERSION="'zf-commons/zfc-rbac:dev-WIP-remove-identity-provider as 3.0'"
-    - REQUIRE_VERSION="'zf-commons/zfc-rbac:^2.5.2'"
+    - REQUIRE_VERSION="zf-commons/zfc-rbac:dev-WIP-remove-identity-provider"
+    - REQUIRE_VERSION="zf-commons/zfc-rbac:^2.5.2"
 
 before_script:
   - composer self-update
