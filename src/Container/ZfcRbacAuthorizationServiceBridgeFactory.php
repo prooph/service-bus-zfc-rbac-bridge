@@ -13,7 +13,10 @@ namespace Prooph\ServiceBusZfcRbacBridge\Container;
 
 use Interop\Container\ContainerInterface;
 use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
-
+use Prooph\ServiceBusZfcRbacBridge\ZfcRbacV3AuthorizationServiceBridge;
+use Zend\Authentication\AuthenticationServiceInterface;
+use ZfcRbac\Service\AuthorizationServiceInterface;
+use ZfcRbac\Service\AuthorizationService;
 /**
  * Class ZfcRbacAuthorizationServiceBridgeFactory
  * @package Prooph\ServiceBusZfcRbacBridge\Container
@@ -26,8 +29,18 @@ final class ZfcRbacAuthorizationServiceBridgeFactory
      */
     public function __invoke(ContainerInterface $container)
     {
-        $zfcRbacAuthorizationService = $container->get('ZfcRbac\Service\AuthorizationService');
+        $method = new \ReflectionMethod(AuthorizationServiceInterface::class, 'isGranted');
+        $num    = $method->getNumberOfParameters();
 
-        return new ZfcRbacAuthorizationServiceBridge($zfcRbacAuthorizationService);
+        if (3 === $num) {
+            return new ZfcRbacV3AuthorizationServiceBridge(
+                $container->get(AuthenticationServiceInterface::class),
+                $container->get(AuthorizationServiceInterface::class)
+            );
+        } else {
+            return new ZfcRbacAuthorizationServiceBridge(
+                $container->get('ZfcRbac\Service\AuthorizationService')
+            );
+        }
     }
 }
