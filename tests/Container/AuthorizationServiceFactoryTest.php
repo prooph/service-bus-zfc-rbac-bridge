@@ -18,7 +18,6 @@ use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
 use Prooph\ServiceBusZfcRbacBridge\ZfcRbacV3AuthorizationServiceBridge;
 use ZfcRbac\Service\AuthorizationServiceInterface;
 use ZfcRbac\Service\AuthorizationServiceInterface as ZfcRbacAuthorizationService;
-use Zend\Authentication\AuthenticationServiceInterface;
 
 /**
  * Class AuthorizationServiceFactoryTest
@@ -26,7 +25,8 @@ use Zend\Authentication\AuthenticationServiceInterface;
  */
 final class AuthorizationServiceFactoryTest extends TestCase
 {
-    public function setUp() {
+    public function setUp()
+    {
         $method     = new \ReflectionMethod(AuthorizationServiceInterface::class, 'isGranted');
         $num        = $method->getNumberOfParameters();
         $this->isV2 = 2 === $num;

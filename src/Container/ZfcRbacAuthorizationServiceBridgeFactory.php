@@ -16,7 +16,6 @@ use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
 use Prooph\ServiceBusZfcRbacBridge\ZfcRbacV3AuthorizationServiceBridge;
 use Zend\Authentication\AuthenticationServiceInterface;
 use ZfcRbac\Service\AuthorizationServiceInterface;
-use ZfcRbac\Service\AuthorizationService;
 /**
  * Class ZfcRbacAuthorizationServiceBridgeFactory
  * @package Prooph\ServiceBusZfcRbacBridge\Container
