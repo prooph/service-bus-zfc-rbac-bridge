@@ -34,7 +34,7 @@
     "require-dev": {
         "zendframework/zend-authentication": "~2.5",
         "phpunit/phpunit": "~4.8",
-        "friendsofphp/php-cs-fixer": "1.7.*",
+        "friendsofphp/php-cs-fixer": "^1.11.5",
         "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
