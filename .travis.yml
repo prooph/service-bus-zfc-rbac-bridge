@@ -5,6 +5,15 @@ php:
   - 5.6
   - 7
 
+env:
+  matrix:
+    - REQUIRE_VERSION="'dev-WIP-remove-identity-provider as 3.0'"
+    - REQUIRE_VERSION="'^2.5.2'"
+
+before_script:
+  - composer self-update
+  - composer require $REQUIRE_VERSION
+
 before_script:
   - composer self-update
   - composer update
