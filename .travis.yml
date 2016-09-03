@@ -7,7 +7,7 @@ php:
 
 env:
   matrix:
-    - REQUIRE_VERSION="zf-commons/zfc-rbac:dev-WIP-remove-identity-provider"
+    - REQUIRE_VERSION="zf-commons/zfc-rbac:dev-develop"
     - REQUIRE_VERSION="zf-commons/zfc-rbac:^2.5.2"
 
 before_script:
