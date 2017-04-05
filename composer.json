@@ -33,7 +33,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "prooph/service-bus": "^6.0",
         "zf-commons/zfc-rbac": "^2.5.2 || ^3.0"
     },
