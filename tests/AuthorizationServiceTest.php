@@ -1,24 +1,23 @@
 <?php
-/*
- * This file is part of the prooph/service-bus-zfc-rbac-bridge.
- * (c) 2014-2015 prooph software GmbH <contact@prooph.de>
+
+declare(strict_types=1);
+
+/**
+ * This file is part of the prooph/pdo-snapshot-store.
+ * (c) 2016-2017 prooph software GmbH <contact@prooph.de>
+ * (c) 2016-2017 Sascha-Oliver Prolic <saschaprolic@googlemail.com>
+ * (c) 2016-2017 Bas Kamer <baskamer@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
- * Date: 09/13/15 - 20:16
  */
 
 namespace ProophTest\ServiceBusZfcRbacBridge;
 
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 use Prooph\ServiceBusZfcRbacBridge\ZfcRbacAuthorizationServiceBridge;
 use ZfcRbac\Service\AuthorizationServiceInterface;
 
-/**
- * Class AuthorizationServiceTest
- * @package ProophTest\ServiceBusZfcRbacBridge
- */
 final class AuthorizationServiceTest extends TestCase
 {
     /**
